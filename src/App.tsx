@@ -1,37 +1,27 @@
-import React, { useState } from 'react';
+import About from './components/About';
+import Contact from './components/Contact';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Skills from './components/Skills';
 
-function App() {
-  const [activeSection, setActiveSection] = useState('home');
-
-  return (
-    <div className="min-h-screen bg-slate-50">
-      <Header activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main>
-        {activeSection === 'home' && (
-          <>
-            <Hero setActiveSection={setActiveSection}/>
-            <Skills />
-            <div className="py-8">
-              <Projects featured={true} />
-            </div>
-          </>
-        )}
-        {activeSection === 'projects' && <Projects />}
-        {activeSection === 'experience' && <Experience />}
-        {activeSection === 'education' && <Education />}
-        {activeSection === 'contact' && <Contact />}
-      </main>
-      <Footer />
-    </div>
-  );
-}
+const App = () => (
+  <div className="min-h-screen overflow-x-clip bg-slate-50 text-slate-900">
+    <Header />
+    <main>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Education />
+      <Contact />
+    </main>
+    <Footer />
+  </div>
+);
 
 export default App;

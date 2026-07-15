@@ -1,130 +1,114 @@
-import React from 'react';
-import { Menu, X, Download, Github, Linkedin, Mail, Eye } from 'lucide-react';
+import { Linkedin, Mail, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { contact, navigation } from '../data/portfolio';
 
-interface HeaderProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const navigation = [
-    { name: 'Home', id: 'home' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Experience', id: 'experience' },
-    { name: 'Education', id: 'education' },
-    { name: 'Contact', id: 'contact' },
-  ];
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo/Name */}
-          <div 
-            className="flex items-center cursor-pointer"
-            onClick={() => setActiveSection('home')}
-          >
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-lg">MA</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-slate-900">Mohamed Amara</h1>
-              <p className="text-sm text-slate-600">Mechatronics Engineer</p>
-            </div>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-slate-200/90 bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
+        <a
+          href="#top"
+          onClick={closeMenu}
+          className="group flex items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
+          aria-label="Mohamed Amara — back to top"
+        >
+          <span className="grid size-10 place-items-center rounded-md bg-slate-950 text-sm font-bold tracking-wide text-white transition-colors group-hover:bg-blue-700">
+            MA
+          </span>
+          <span className="leading-tight">
+            <span className="block text-sm font-semibold text-slate-950 sm:text-base">
+              {contact.name}
+            </span>
+            <span className="block text-[11px] text-slate-500 sm:text-xs">
+              {contact.title}
+            </span>
+          </span>
+        </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setActiveSection(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-slate-700 hover:text-blue-600'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-            
-            {/* Quick Actions */}
-            <div className="flex items-center space-x-3 ml-6 pl-6 border-l border-slate-200">
-  <a
-    href="https://www.linkedin.com/in/mohamed-amara-1b45752b4" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="p-2 text-slate-600 hover:text-blue-600 transition-colors"
-  >
-    <Linkedin size={18} />
-  </a>
-  <a
-    href="mailto:mamara@uwaterloo.ca"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-2 text-slate-600 hover:text-blue-600 transition-colors"
-  >
-    <Mail size={18} />
-  </a>
-  <a
-    href="/assets/resume.pdf" // Place your resume in /public/resume.pdf
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center"
-  >
-    <Eye size={16} className="mr-2" />
-    View Resume
-  </a>
-</div>
+        <div className="hidden items-center gap-5 lg:flex">
+          <nav aria-label="Primary navigation">
+            <ul className="flex items-center gap-1">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-1 border-l border-slate-200 pl-4">
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Connect with Mohamed on LinkedIn"
+              className="icon-link"
+            >
+              <Linkedin aria-hidden="true" size={18} />
+            </a>
+            <a
+              href={contact.emailHref}
+              aria-label="Email Mohamed"
+              className="icon-link"
+            >
+              <Mail aria-hidden="true" size={18} />
+            </a>
+          </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 py-4">
-            <div className="space-y-2">
-              {navigation.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setActiveSection(item.id);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${
-                    activeSection === item.id
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-            <div className="flex items-center justify-between pt-4 mt-4 border-t border-slate-200">
-              <div className="flex space-x-4">
-                <Github size={20} className="text-slate-600" />
-                <Linkedin size={20} className="text-slate-600" />
-                <Mail size={20} className="text-slate-600" />
-              </div>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
-                <Download size={16} className="mr-2" />
-                Resume
-              </button>
-            </div>
-          </div>
-        )}
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          className="icon-link lg:hidden"
+        >
+          {isMenuOpen ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
+        </button>
       </div>
+
+      {isMenuOpen && (
+        <div id="mobile-navigation" className="border-t border-slate-200 bg-white px-5 py-5 lg:hidden">
+          <nav aria-label="Mobile navigation" className="mx-auto max-w-7xl">
+            <ul className="grid grid-cols-2 gap-2">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="block rounded-md border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-4 flex items-center gap-2 border-t border-slate-200 pt-4">
+              <a
+                href={contact.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Connect with Mohamed on LinkedIn"
+                className="icon-link"
+              >
+                <Linkedin aria-hidden="true" size={18} />
+              </a>
+              <a href={contact.emailHref} aria-label="Email Mohamed" className="icon-link">
+                <Mail aria-hidden="true" size={18} />
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
