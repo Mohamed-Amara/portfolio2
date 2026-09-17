@@ -5,10 +5,9 @@ import AutomotiveProject from './AutomotiveProject';
 
 type ProjectVisualProps = {
   visual: ProjectVisualType;
-  title: string;
 };
 
-const ProjectVisual = ({ visual, title }: ProjectVisualProps) => {
+const ProjectVisual = ({ visual }: ProjectVisualProps) => {
   if (visual.type === 'automotive') {
     return (
       <div className="technical-grid flex min-h-80 flex-col justify-between rounded-xl border border-slate-800 bg-slate-950 p-5 text-white sm:p-7 lg:h-full">
@@ -57,7 +56,7 @@ const ProjectVisual = ({ visual, title }: ProjectVisualProps) => {
               <span className="font-mono text-[10px] text-blue-400">
                 0{index + 1}
               </span>
-              <p className="mt-1 text-sm font-medium" dir={title.startsWith('Arabic') ? 'rtl' : undefined}>
+              <p className="mt-1 text-sm font-medium">
                 {node}
               </p>
             </div>
@@ -67,15 +66,8 @@ const ProjectVisual = ({ visual, title }: ProjectVisualProps) => {
     );
   }
 
-  const isCoinWa = title.startsWith('CoinWa');
-  const isWestern = title.startsWith('Teacher-Course');
-
   return (
-    <div
-      className={`overflow-hidden rounded-xl border border-slate-200 bg-slate-100 ${
-        isCoinWa ? 'h-72 p-4 sm:h-80' : 'h-64 p-4 sm:h-72'
-      }`}
-    >
+    <div className="h-64 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 p-4 sm:h-72">
       <div
         className={`grid h-full gap-3 ${
           visual.images.length === 3
@@ -88,9 +80,7 @@ const ProjectVisual = ({ visual, title }: ProjectVisualProps) => {
         {visual.images.map((image) => (
           <div
             key={image.src}
-            className={`overflow-hidden rounded-lg bg-white ${
-              isWestern ? 'grid place-items-center p-8' : ''
-            }`}
+            className="overflow-hidden rounded-lg bg-white"
           >
             <img
               src={image.src}
@@ -140,7 +130,7 @@ const Projects = () => {
               index === 0 || project.status ? 'lg:col-span-2 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:gap-8' : ''
             }`}
           >
-            <ProjectVisual visual={project.visual} title={project.title} />
+            <ProjectVisual visual={project.visual} />
 
             <div className={`flex flex-col pt-6 ${index === 0 || project.status ? 'lg:pt-0' : ''}`}>
               <div className="flex flex-wrap items-center gap-3">

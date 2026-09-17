@@ -8,9 +8,7 @@ export type ExperienceItem = {
   role: string;
   organization?: string;
   period: string;
-  location?: string;
   context: string;
-  additional?: boolean;
   bullets: readonly string[];
   skills: readonly string[];
 };
@@ -64,18 +62,12 @@ export type Education = {
   coursework: readonly string[];
 };
 
-// The employer is confirmed by the user and the supplied Confluence export.
-export const AI_HARDWARE_EMPLOYER = 'The Plug Co';
-// An unconfirmed sales employer is omitted from the page.
-export const DOOR_TO_DOOR_SALES_EMPLOYER: string | undefined = undefined;
-
 export const contact = {
   name: 'Mohamed Amara',
   title: 'Mechatronics Engineering Student',
   email: 'mamara@uwaterloo.ca',
   emailHref: 'mailto:mamara@uwaterloo.ca',
   linkedin: 'https://www.linkedin.com/in/mohamed-amara-1b45752b4',
-  location: 'Waterloo, Ontario, Canada',
   resumeHref: '/assets/resume.pdf',
 } as const;
 
@@ -90,38 +82,19 @@ export const navigation: readonly NavItem[] = [
 
 export const experiences: readonly ExperienceItem[] = [
   {
-    role: 'AI/Hardware Systems Developer',
-    organization: AI_HARDWARE_EMPLOYER,
+    role: 'AI & Hardware Systems Developer',
+    organization: 'The Plug Co',
     id: 'the-plug',
-    period: 'Fall 2025 · Summer 2026',
-    context: 'Memory Box — an AI application for organizing and searching photos, audio and video.',
+    period: 'September – December 2025 · May – August 2026',
+    context: 'AI systems, embedded-device prototyping and system architecture.',
     bullets: [
-      'Collaborated on Memory Box from early design through AI and device integration, working across hardware requirements and software with the team.',
-      'Contributed to Python AI processing and TypeScript device-data integration, including motion data, timestamp checks and recovery after disconnects.',
-      'Created the initial UML deployment diagram to show how devices, backend services and storage would connect.',
-      'Compared cloud and on-device AI processing in a hardware feasibility study and recommended using existing phones for the first release.',
+      'Prototyped early VR hardware concepts with STM32 microcontrollers and breadboards to explore sensor integration, device I/O and hardware-software interaction.',
+      'Evaluated custom-hardware feasibility and helped shift development toward compatibility with existing Meta and commercial VR devices to shorten development time.',
+      'Designed the end-to-end logic for capturing, synchronizing and structuring camera, audio, motion and user-interaction data for AI processing and searchable memories.',
+      'Developed Python and TypeScript components to process device data, validate inputs and connect collected events with backend and AI-driven application features.',
     ],
     skills: [
-      'Python', 'TypeScript', 'Device Integration', 'AI Processing', 'System Architecture', 'Hardware Feasibility',
-    ],
-  },
-  {
-    role: 'Door-to-Door Sales Representative',
-    id: 'sales',
-    context: 'Residential painting lead generation.',
-    additional: true,
-    organization: DOOR_TO_DOOR_SALES_EMPLOYER,
-    period: 'Summer 2026',
-    bullets: [
-      'Spoke with homeowners about painting needs, answered initial questions and generated quote opportunities.',
-      'Qualified interested homeowners and passed opportunities to the estimating and closing team.',
-    ],
-    skills: [
-      'Door-to-Door Sales',
-      'Lead Generation',
-      'Prospecting',
-      'Objection Handling',
-      'Customer Qualification',
+      'Python', 'TypeScript', 'C++', 'AI Systems', 'Embedded Devices', 'System Architecture',
     ],
   },
   {
@@ -130,38 +103,17 @@ export const experiences: readonly ExperienceItem[] = [
     context: 'A mobile app that teaches teenagers budgeting and saving.',
     organization: 'CoinWa',
     period: 'January 2025 – April 2025',
-    location: 'Remote',
     bullets: [
-      'Developed Flutter and Dart screens for interactive financial-literacy lessons on mobile.',
-      'Built Node.js and MongoDB services for accounts and learning progress, including email verification and password recovery.',
-      'Debugged rendering and performance issues with Flutter DevTools to make the app work across screen sizes.',
+      'Developed Flutter interfaces for interactive budgeting and saving modules across multiple mobile screen sizes.',
+      'Implemented Node.js and MongoDB services for authentication, user accounts and learning-progress persistence.',
+      'Improved application reliability by debugging rendering and performance issues with Flutter DevTools and end-to-end feature testing.',
     ],
     skills: [
       'Flutter',
       'Dart',
       'Node.js',
       'MongoDB',
-      'Mobile Application Development',
-    ],
-  },
-  {
-    role: 'Field Technician',
-    id: 'wsp',
-    context: 'Archaeological field surveys and site documentation.',
-    additional: true,
-    organization: 'WSP',
-    period: 'May 2024 – August 2024',
-    location: 'Thunder Bay, Ontario',
-    bullets: [
-      'Mapped archaeological sites with GPS and GIS and maintained field records during surveys and excavations.',
-      'Collected and preserved artifacts and soil data while following site safety and quality procedures.',
-    ],
-    skills: [
-      'Geographic Information Systems',
-      'Global Positioning System',
-      'Field Data Collection',
-      'Technical Documentation',
-      'Workplace Safety',
+      'REST APIs',
     ],
   },
   {
@@ -170,18 +122,14 @@ export const experiences: readonly ExperienceItem[] = [
     context: 'A Java tool for assigning instructors to courses.',
     organization: 'Western University',
     period: 'February 2023 – June 2023',
-    location: 'London, Ontario',
     bullets: [
-      'Developed a Java application to assign instructors to courses using qualifications and availability as constraints.',
-      'Replaced repetitive manual assignments, improving allocation efficiency by approximately 80%.',
-      'Worked with departmental staff to refine requirements, then trained them and documented how to use the tool.',
+      'Developed a Java allocation system that matched instructors to courses by qualifications and availability, improving scheduling efficiency by approximately 80%.',
+      'Refined requirements with departmental staff, documented application workflows and trained users to support continued deployment.',
     ],
     skills: [
       'Java',
-      'Software Development',
-      'Requirements Gathering',
-      'Process Automation',
-      'Technical Training',
+      'Requirements Analysis',
+      'Technical Documentation',
     ],
   },
 ];
@@ -193,16 +141,12 @@ export const projects: readonly ProjectItem[] = [
     summary:
       'A pedal-powered washing machine designed to wash clothes without electricity.',
     bullets: [
-      'Modelled the drum, frame, seat and drivetrain as a SolidWorks assembly.',
-      'Calculated shaft loads, torque and fatigue to size transmission parts for a target safety factor of 2.',
-      'Designed two chain-drive ratios to provide different speeds for washing and spin drying.',
+      'Designed a pedal-driven drum and two-ratio chain drivetrain in SolidWorks.',
+      'Sized shafts and transmission components using torque and fatigue analysis.',
     ],
     technologies: [
       'SolidWorks',
       'Mechanical Design',
-      'Chain Drives',
-      'Engineering Analysis',
-      'Material Selection',
     ],
     visual: {
       type: 'images',
@@ -219,13 +163,12 @@ export const projects: readonly ProjectItem[] = [
     },
   },
   {
-    title: 'OEM CarPlay Integration — 2016 Acura ILX',
+    title: 'OEM Wireless CarPlay Integration — 2016 Acura ILX',
     summary:
       'I’m working on adding wireless CarPlay to my 2016 Acura ILX while keeping its two factory screens, steering-wheel controls and backup camera.',
     bullets: [
-      'The plan: a small Linux/Android computer runs CarPlay, while an STM32 handles power, buttons and screen switching.',
-      'Current focus: figuring out how the factory screens connect and planning tests on a donor unit.',
-      'A key requirement: the factory system and backup camera must still work if my hardware fails.',
+      'Designed an embedded architecture that retains the factory displays, controls and backup-camera functionality.',
+      'Defined signal-measurement, video-switching and fail-safe requirements so the factory system can take over during hardware faults.',
     ],
     technologies: [
       'Embedded Systems',
@@ -243,93 +186,23 @@ export const projects: readonly ProjectItem[] = [
     detailHref: '#automotive-infotainment',
   },
   {
-    title: 'Armada',
+    title: 'Armada — Real-Time Convoy Navigation Platform',
     summary:
-      'A web app for planning routes and driving together in a convoy.',
+      'A mobile-first platform for planning routes and coordinating drivers in a convoy.',
     bullets: [
-      'Developed live maps, route lines and nearby-place search using Next.js and React-Leaflet.',
-      'Created user profiles and connected the frontend to Firebase and a Node.js, Express and MongoDB backend.',
+      'Developed authentication, live locations, route visualization and synchronized driver profiles.',
+      'Integrated geolocation, mapping and persistent cloud data to support real-time coordination across multiple connected users.',
     ],
     technologies: [
       'Next.js',
-      'React',
+      'TypeScript',
       'Node.js',
-      'MongoDB',
       'Firebase',
-      'React-Leaflet',
     ],
     visual: {
       type: 'system',
       label: 'Live convoy system',
       nodes: ['Route', 'Convoy', 'Nearby', 'Profile'],
-    },
-  },
-  {
-    title: 'Arabic Café Point-of-Sale System',
-    summary:
-      'A point-of-sale app for a café in Libya, with an Arabic interface and Libyan-dinar transactions.',
-    bullets: [
-      'Developed order entry, product management and transaction workflows in React and Tailwind.',
-      'Designed right-to-left screens and receipt layouts for an 80 mm thermal printer.',
-      'Worked on desktop packaging and local storage with Electron and SQLite.',
-    ],
-    technologies: [
-      'React',
-      'Tailwind CSS',
-      'Electron',
-      'SQLite',
-      'Arabic RTL Design',
-    ],
-    visual: {
-      type: 'system',
-      label: 'نظام نقطة البيع',
-      nodes: ['الطلبات', 'المنتجات', 'الدفع', 'الإيصال'],
-    },
-  },
-  {
-    title: 'CoinWa Financial Literacy App',
-    summary:
-      'The financial-literacy app I worked on during my CoinWa internship.',
-    bullets: [
-      'Created Flutter screens for lessons and learning progress.',
-      'Connected accounts and progress tracking to Node.js and MongoDB, including email verification and password recovery.',
-    ],
-    technologies: ['Flutter', 'Dart', 'Node.js', 'MongoDB'],
-    visual: {
-      type: 'images',
-      images: [
-        {
-          src: '/assets/cw1.png',
-          alt: 'CoinWa mobile app onboarding screen',
-        },
-        {
-          src: '/assets/cw2.png',
-          alt: 'CoinWa financial-literacy lesson screen',
-        },
-        {
-          src: '/assets/cw3.png',
-          alt: 'CoinWa mobile app progress screen',
-        },
-      ],
-    },
-  },
-  {
-    title: 'Teacher-Course Assignment Optimizer',
-    summary:
-      'A Java application I developed at Western University to automate instructor-course assignments.',
-    bullets: [
-      'Applied instructor qualifications and availability as constraints to replace repetitive manual assignments.',
-      'Refined the tool with departmental staff and trained them to use it.',
-    ],
-    technologies: ['Java', 'Algorithms', 'Data Structures', 'Process Automation'],
-    visual: {
-      type: 'images',
-      images: [
-        {
-          src: '/assets/western.jpeg',
-          alt: 'Western University crest',
-        },
-      ],
     },
   },
 ];
@@ -464,57 +337,51 @@ export const automotiveProject = {
 
 export const skillGroups: readonly SkillGroup[] = [
   {
-    title: 'Embedded & lab',
+    title: 'Languages',
     skills: [
+      'C',
       'C++',
       'Python',
+      'TypeScript',
+      'JavaScript',
+      'Java',
+      'MATLAB',
+      'Dart',
+    ],
+  },
+  {
+    title: 'Embedded & robotics',
+    skills: [
       'STM32',
-      'Sensors',
-      'Instrumentation',
+      'ESP32',
+      'ARM Cortex-M',
+      'FreeRTOS',
       'UART',
       'SPI',
       'I²C',
-      'Oscilloscope',
-      'Logic Analyzer',
+      'CAN',
+      'PWM',
+      'ADC/DAC',
+      'Sensors',
+      'PID',
     ],
   },
   {
-    title: 'Software',
+    title: 'Software & tools',
     skills: [
-      'JavaScript',
-      'TypeScript',
-      'Node.js',
       'React',
       'Next.js',
+      'Node.js',
+      'Express',
       'Flutter',
-      'Dart',
-      'Java',
       'MongoDB',
       'Firebase',
+      'Supabase',
       'Git',
-    ],
-  },
-  {
-    title: 'Engineering & CAD',
-    skills: [
-      'Hardware-Software Integration',
       'SolidWorks',
-      'AutoCAD',
       'KiCad',
-      'MATLAB',
-      'Multimeter',
-      'Soldering',
-      'Control Systems',
-    ],
-  },
-  {
-    title: 'System design & communication',
-    skills: [
-      'UML',
-      'Hardware Feasibility',
-      'Requirements Analysis',
-      'Technical Documentation',
-      'Technical Communication',
+      'Oscilloscopes',
+      'Logic Analyzers',
     ],
   },
 ];
@@ -522,14 +389,14 @@ export const skillGroups: readonly SkillGroup[] = [
 export const education: Education = {
   institution: 'University of Waterloo',
   degree:
-    'Candidate for Bachelor of Applied Science, Honours Mechatronics Engineering',
-  period: 'September 2023 – April 2028 expected',
+    'Candidate for Bachelor of Applied Science in Honours Mechatronics Engineering',
+  period: 'September 2023 – April 2028 (expected)',
   coursework: [
-    'Sensors and Instrumentation',
-    'Engineering Design',
-    'Digital Logic',
-    'Solid Mechanics',
-    'Circuits',
-    'Computer Structures and Real-Time Systems',
+    'Microprocessor Systems & Interfacing',
+    'Computer Structures & Real-Time Systems',
+    'Sensors & Instrumentation',
+    'Actuators & Power Electronics',
+    'Automatic Control Systems',
+    'Algorithms & Data Structures',
   ],
 };

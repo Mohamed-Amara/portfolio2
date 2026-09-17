@@ -13,13 +13,13 @@ Use `npm run lint` and `npm run build` before deployment.
 
 ## Content notes
 
+- The visible experience, project, skill and coursework content follows the engineering résumé supplied on September 17, 2026. The site keeps a first-person portfolio voice while matching the résumé’s scope and claims.
 - The featured OEM CarPlay / 2016 Acura ILX project is in development. Its card and roadmap data live in `src/data/portfolio.ts`; the expandable engineering brief is in `src/components/AutomotiveProject.tsx`. The `#automotive-infotainment` anchor opens the brief directly.
 - Automotive diagrams describe proposed architecture, not implemented hardware. Update status labels only when supporting work is completed; add original teardown photos, measurements and validation records as they become available.
-
 - `public/assets/resume.pdf` is the current one-page engineering résumé. Editable LaTeX is in `resume/Mohamed-Amara-Resume.tex`. The PDF is compiled with Tectonic and checked visually and by text extraction.
-- The Plug Co experience combines directly credited design work with collaborative AI/device work confirmed by Mohamed. The latest term ended August 2026. See `docs/content-sources.md` for the editorial record.
-- The door-to-door sales employer remains unconfirmed. Replace `DOOR_TO_DOOR_SALES_EMPLOYER` once known.
-- Availability is Winter 2027 onward, centralized in `profile`. Sales is secondary website content and is omitted from the engineering résumé.
+- The Plug Co experience covers STM32/breadboard VR prototyping, the move toward existing commercial VR devices, multimodal data architecture, and Python/TypeScript integration work.
+- Availability is Winter 2027 onward and is centralized in `profile`.
+- Personal and experience location fields are intentionally not stored or displayed. “University of Waterloo” remains as the education institution.
 - Keep the hero’s 3B academic stage current. Do not restore the old Fall 2026 availability text.
 
 ## Résumé updates

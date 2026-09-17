@@ -12,7 +12,7 @@ const Hero = () => (
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
           I’m a Mechatronics Engineering student interested in embedded systems and how devices work.
-          My experience includes AI and device integration at The Plug, mobile development at CoinWa,
+          My experience includes AI and hardware systems at The Plug Co, mobile development at CoinWa,
           and a Java tool that automated course assignments.
         </p>
         <ul className="mt-6 flex flex-wrap gap-2" aria-label="Roles of interest">
@@ -23,14 +23,14 @@ const Hero = () => (
           <a href="#projects" className="button-secondary">See my projects <ArrowRight aria-hidden="true" size={17} /></a>
           <a href={contact.resumeHref} target="_blank" rel="noreferrer" className="button-secondary">View résumé <FileText aria-hidden="true" size={17} /></a>
         </div>
-        <p className="mt-5 text-sm text-slate-600">{profile.availability} · Waterloo, Ontario</p>
+        <p className="mt-5 text-sm text-slate-600">{profile.availability}</p>
       </div>
       <aside className="rounded-xl border border-slate-200 bg-white p-6 sm:p-7" aria-label="Selected work at a glance">
         <p className="section-kicker">A quick look at my work</p>
         <div className="mt-4 divide-y divide-slate-200">
           <a href="#the-plug" className="block rounded-sm py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
-            <p className="flex items-center justify-between gap-3 font-semibold text-slate-950">AI & device integration <ArrowRight aria-hidden="true" size={16} className="text-blue-700" /></p>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Team development of Memory Box, from hardware feasibility to AI and device data.</p>
+            <p className="flex items-center justify-between gap-3 font-semibold text-slate-950">AI & hardware systems <ArrowRight aria-hidden="true" size={16} className="text-blue-700" /></p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">VR prototyping, multimodal device data and AI-driven application features.</p>
           </a>
           <a href="#washing-machine" className="block rounded-sm py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
             <p className="flex items-center justify-between gap-3 font-semibold text-slate-950">Mechanical design <ArrowRight aria-hidden="true" size={16} className="text-blue-700" /></p>

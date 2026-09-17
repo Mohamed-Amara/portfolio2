@@ -1,5 +1,6 @@
 \documentclass[letterpaper,10pt]{article}
-\usepackage[margin=0.6in]{geometry}
+
+\usepackage[margin=0.60in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
@@ -7,72 +8,164 @@
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{hyperref}
+
 \renewcommand{\familydefault}{\sfdefault}
 \definecolor{accent}{HTML}{183E66}
-\hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Mohamed Amara - Mechatronics Engineering Resume},pdfauthor={Mohamed Amara},pdfsubject={Winter 2027 engineering co-op}}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    pdftitle={Mohamed Amara - Mechatronics Engineering Resume},
+    pdfauthor={Mohamed Amara},
+    pdfsubject={Winter 2027 Engineering Co-op}
+}
+
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{2em}
-\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{1pt}\titlerule]
-\titlespacing*{\section}{0pt}{9pt}{5pt}
-\setlist[itemize]{leftmargin=12pt,label=\textbullet,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt}
-\newcommand{\entry}[3]{\textbf{#1}\hfill {\small #2}\\[-1pt]{\small #3}}
+
+\titleformat{\section}
+    {\large\bfseries\color{accent}}
+    {}{0pt}{}
+    [\vspace{1pt}\titlerule]
+
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\setlist[itemize]{
+    leftmargin=12pt,
+    label=\textbullet,
+    itemsep=1.5pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+\newcommand{\entry}[4]{
+    \textbf{#1} \textnormal{| #2}
+    \hfill {\small #3}\\[-1pt]
+    {\small #4}
+}
 
 \begin{document}
+
 \begin{center}
-  {\fontsize{24}{26}\selectfont\bfseries Mohamed Amara}\\[4pt]
-  {\small 3B Mechatronics Engineering \enspace|\enspace Available for co-op: Winter 2027 onward}\\[4pt]
-  {\small
-  \href{mailto:mamara@uwaterloo.ca}{mamara@uwaterloo.ca}\enspace|\enspace
-  \href{https://mohamedamara.netlify.app}{mohamedamara.netlify.app}\enspace|\enspace
-  \href{https://www.linkedin.com/in/mohamed-amara-1b45752b4}{LinkedIn}\enspace|\enspace Waterloo, ON}
+    {\fontsize{24}{26}\selectfont\bfseries Mohamed Amara}\\[3pt]
+
+    {\small
+    3B Mechatronics Engineering
+    \enspace|\enspace
+    Embedded Systems \& Software
+    \enspace|\enspace
+    Winter 2027 Co-op}\\[3pt]
+
+    {\small
+    \href{mailto:mamara@uwaterloo.ca}{mamara@uwaterloo.ca}
+    \enspace|\enspace
+    \href{https://mohamedamara.netlify.app}{mohamedamara.netlify.app}
+    \enspace|\enspace
+    \href{https://www.linkedin.com/in/mohamed-amara-1b45752b4}{linkedin.com/in/mohamed-amara-1b45752b4}}
 \end{center}
+
 \vspace{-8pt}
 
-\section{Education}
-\textbf{University of Waterloo}\hfill Expected April 2028\\
-Candidate for Bachelor of Applied Science, Honours Mechatronics Engineering\\
-{\small Relevant coursework: Sensors and Instrumentation, Circuits, Digital Logic, Solid Mechanics,\\
-Computer Structures and Real-Time Systems, Engineering Design}
-
 \section{Technical Skills}
-\textbf{Languages:} C++, Python, TypeScript, JavaScript, Java, MATLAB\\
-\textbf{Embedded \& lab:} STM32, sensors, UART, SPI, I\textsuperscript{2}C, oscilloscope, logic analyzer, soldering\\
-\textbf{Engineering:} SolidWorks, AutoCAD, KiCad, UML, hardware feasibility, requirements analysis\\
-\textbf{Software:} Node.js, React, Flutter/Dart, MongoDB, Git
+
+\textbf{Languages:}
+C, C++, Python, TypeScript, JavaScript, Java, MATLAB, Dart
+
+\textbf{Embedded \& Robotics:}
+STM32, ESP32, ARM Cortex-M, FreeRTOS, UART, SPI, I\textsuperscript{2}C, CAN, PWM, ADC/DAC, sensors, PID
+
+\textbf{Software \& Tools:}
+React, Next.js, Node.js, Express, Flutter, MongoDB, Firebase, Supabase, Git, SolidWorks, KiCad, oscilloscopes, logic analyzers
 
 \section{Experience}
-\entry{AI/Hardware Systems Developer \textnormal{| The Plug Co}}{Fall 2025 \& Summer 2026}{Memory Box: AI software for organizing and searching photos, audio and video}
+
+\entry
+{AI \& Hardware Systems Developer}
+{The Plug Co}
+{Sep. 2025--Dec. 2025, May--Aug. 2026}
+{Python, TypeScript, C++, AI systems, embedded devices, system architecture}
+
 \begin{itemize}
-  \item Collaborated on Python AI pipelines for processing camera, audio and motion data into structured events for searchable memories.
-  \item Contributed to TypeScript device integration, including data validation, timestamp checks and recovery after disconnects.
-  \item Created the initial UML deployment diagram to map connections between client devices, backend services and storage.
-  \item Compared cloud and on-device AI in a hardware feasibility study; recommended a phone-based first release to avoid requiring custom hardware.
-\end{itemize}
-\vspace{3pt}
-\entry{Software Engineer Intern \textnormal{| CoinWa}}{Jan 2025 - Apr 2025}{Remote}
-\begin{itemize}
-  \item Developed Flutter/Dart screens for interactive budgeting and saving lessons; resolved rendering and performance issues with Flutter DevTools.
-  \item Built Node.js and MongoDB services for user accounts and learning progress, including email verification and password recovery.
-\end{itemize}
-\vspace{3pt}
-\entry{Software Engineering Intern \textnormal{| Western University}}{Feb 2023 - Jun 2023}{London, Ontario}
-\begin{itemize}
-  \item Developed a Java tool to assign instructors to courses using qualifications and availability, improving allocation efficiency by approximately 80\%.
-  \item Refined requirements with departmental staff, trained users and documented the application for ongoing use.
+    \item Prototyped early VR hardware concepts using STM32 microcontrollers and breadboards to explore sensor integration, device I/O and hardware-software interaction.
+    \item Evaluated custom hardware feasibility and helped shift development toward compatibility with existing Meta and commercial VR devices to reduce development time.
+    \item Designed the end-to-end logic for capturing, synchronizing and structuring camera, audio, motion and user-interaction data for AI processing and searchable memories.
+    \item Developed Python and TypeScript components to process device data, validate inputs and connect collected events with backend and AI-driven application features.
 \end{itemize}
 
-\section{Selected Projects}
-\textbf{Human-Powered Washing Machine}\hfill {\small SolidWorks, mechanical design}
+\vspace{1pt}
+
+\entry
+{Software Engineering Intern}
+{CoinWa}
+{Jan. 2025--Apr. 2025}
+{Flutter, Dart, Node.js, MongoDB, REST APIs}
+
 \begin{itemize}
-  \item Modelled the drum, frame, seat and pedal drivetrain; designed two chain-drive ratios for washing and spin drying.
-  \item Calculated shaft loads, torque and fatigue to size transmission components for a target safety factor of 2.
+    \item Developed Flutter interfaces for interactive budgeting and saving modules across multiple mobile screen sizes.
+    \item Implemented Node.js and MongoDB services for authentication, user accounts and learning-progress persistence.
+    \item Improved application reliability by debugging rendering and performance issues with Flutter DevTools and end-to-end feature testing.
 \end{itemize}
-\vspace{3pt}
-\textbf{OEM CarPlay Integration - 2016 Acura ILX}\hfill {\small In development: research \& design}
+
+\vspace{1pt}
+
+\entry
+{Software Engineering Intern}
+{Western University}
+{Feb. 2023--Jun. 2023}
+{Java, requirements analysis, technical documentation}
+
 \begin{itemize}
-  \item Outlined an SBC/STM32 design to add wireless CarPlay while preserving the factory displays, controls and backup camera.
-  \item Planning donor-unit signal measurements and fail-safe video switching, with factory-system fallback and camera priority as core requirements.
+    \item Developed a Java allocation system that matched instructors to courses by qualifications and availability, improving scheduling efficiency by approximately 80\%.
+    \item Refined requirements with departmental staff, documented application workflows and trained users to support continued deployment.
 \end{itemize}
+
+\section{Projects}
+
+\textbf{OEM Wireless CarPlay Integration --- 2016 Acura ILX}
+\hfill
+{\small STM32, embedded systems, automotive electronics}
+
+\begin{itemize}
+    \item Designed an embedded architecture to add wireless CarPlay while retaining factory displays, controls and backup-camera functionality.
+    \item Defined signal-measurement, video-switching and fail-safe requirements to enable factory-system fallback during hardware faults.
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Armada --- Real-Time Convoy Navigation Platform}
+\hfill
+{\small Next.js, TypeScript, Node.js, Firebase}
+
+\begin{itemize}
+    \item Developed a mobile-first convoy platform with authentication, live locations, route visualization and synchronized driver profiles.
+    \item Integrated geolocation, mapping and persistent cloud data to support real-time coordination across multiple connected users.
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Human-Powered Washing Machine}
+\hfill
+{\small SolidWorks, mechanical design}
+
+\begin{itemize}
+    \item Designed a pedal-driven drum and two-ratio chain drivetrain in SolidWorks, sizing shafts and transmission components using torque and fatigue analysis.
+\end{itemize}
+
+\section{Education}
+
+\textbf{University of Waterloo}
+\hfill
+Sep. 2023--Apr. 2028 Expected
+
+Candidate for Bachelor of Applied Science in Honours Mechatronics Engineering
+
+{\small
+\textbf{Relevant Coursework:}
+Microprocessor Systems \& Interfacing, Computer Structures \& Real-Time Systems,
+Sensors \& Instrumentation, Actuators \& Power Electronics,
+Automatic Control Systems, Algorithms \& Data Structures}
+
 \end{document}

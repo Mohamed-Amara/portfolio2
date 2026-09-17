@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, FileText, Linkedin, Mail } from 'lucide-react';
 import { contact, profile } from '../data/portfolio';
 
 const Contact = () => (
@@ -15,10 +15,6 @@ const Contact = () => (
             Email me to talk about the team and what I could work on.
           </p>
           <p className="mt-3 text-sm font-medium text-blue-100">{profile.availability}</p>
-          <p className="mt-6 flex items-center gap-2 text-sm text-blue-100">
-            <MapPin aria-hidden="true" size={16} />
-            {contact.location}
-          </p>
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">

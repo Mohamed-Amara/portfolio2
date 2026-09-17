@@ -1,7 +1,7 @@
-import { Cpu, MessagesSquare, Monitor, Wrench } from 'lucide-react';
+import { Code2, Cpu, Wrench } from 'lucide-react';
 import { skillGroups } from '../data/portfolio';
 
-const icons = [Cpu, Monitor, Wrench, MessagesSquare] as const;
+const icons = [Code2, Cpu, Wrench] as const;
 
 const Skills = () => (
   <section id="skills" className="scroll-mt-24 border-y border-slate-200 bg-white">
