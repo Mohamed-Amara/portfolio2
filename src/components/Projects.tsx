@@ -5,9 +5,10 @@ import AutomotiveProject from './AutomotiveProject';
 
 type ProjectVisualProps = {
   visual: ProjectVisualType;
+  title: string;
 };
 
-const ProjectVisual = ({ visual }: ProjectVisualProps) => {
+const ProjectVisual = ({ visual, title }: ProjectVisualProps) => {
   if (visual.type === 'automotive') {
     return (
       <div className="technical-grid flex min-h-80 flex-col justify-between rounded-xl border border-slate-800 bg-slate-950 p-5 text-white sm:p-7 lg:h-full">
@@ -56,7 +57,7 @@ const ProjectVisual = ({ visual }: ProjectVisualProps) => {
               <span className="font-mono text-[10px] text-blue-400">
                 0{index + 1}
               </span>
-              <p className="mt-1 text-sm font-medium">
+              <p className="mt-1 text-sm font-medium" dir={title.startsWith('Arabic') ? 'rtl' : undefined}>
                 {node}
               </p>
             </div>
@@ -66,8 +67,15 @@ const ProjectVisual = ({ visual }: ProjectVisualProps) => {
     );
   }
 
+  const isCoinWa = title.startsWith('CoinWa');
+  const isWestern = title.startsWith('Teacher-Course');
+
   return (
-    <div className="h-64 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 p-4 sm:h-72">
+    <div
+      className={`overflow-hidden rounded-xl border border-slate-200 bg-slate-100 ${
+        isCoinWa ? 'h-72 p-4 sm:h-80' : 'h-64 p-4 sm:h-72'
+      }`}
+    >
       <div
         className={`grid h-full gap-3 ${
           visual.images.length === 3
@@ -78,10 +86,12 @@ const ProjectVisual = ({ visual }: ProjectVisualProps) => {
         }`}
       >
         {visual.images.map((image) => (
-          <div
-            key={image.src}
-            className="overflow-hidden rounded-lg bg-white"
-          >
+            <div
+              key={image.src}
+              className={`overflow-hidden rounded-lg bg-white ${
+                isWestern ? 'grid place-items-center p-8' : ''
+              }`}
+            >
             <img
               src={image.src}
               alt={image.alt}
@@ -130,7 +140,7 @@ const Projects = () => {
               index === 0 || project.status ? 'lg:col-span-2 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:gap-8' : ''
             }`}
           >
-            <ProjectVisual visual={project.visual} />
+            <ProjectVisual visual={project.visual} title={project.title} />
 
             <div className={`flex flex-col pt-6 ${index === 0 || project.status ? 'lg:pt-0' : ''}`}>
               <div className="flex flex-wrap items-center gap-3">

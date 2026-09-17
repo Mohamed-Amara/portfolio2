@@ -13,7 +13,7 @@ Use `npm run lint` and `npm run build` before deployment.
 
 ## Content notes
 
-- The visible experience, project, skill and coursework content follows the engineering résumé supplied on September 17, 2026. The site keeps a first-person portfolio voice while matching the résumé’s scope and claims.
+- The visible experience, skill and coursework content follows the engineering résumé supplied on September 17, 2026. The résumé's three selected projects are featured first; the site also keeps the additional Arabic café POS, CoinWa and teacher-course projects.
 - The featured OEM CarPlay / 2016 Acura ILX project is in development. Its card and roadmap data live in `src/data/portfolio.ts`; the expandable engineering brief is in `src/components/AutomotiveProject.tsx`. The `#automotive-infotainment` anchor opens the brief directly.
 - Automotive diagrams describe proposed architecture, not implemented hardware. Update status labels only when supporting work is completed; add original teardown photos, measurements and validation records as they become available.
 - `public/assets/resume.pdf` is the current one-page engineering résumé. Editable LaTeX is in `resume/Mohamed-Amara-Resume.tex`. The PDF is compiled with Tectonic and checked visually and by text extraction.

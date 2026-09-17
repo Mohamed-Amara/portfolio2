@@ -205,6 +205,74 @@ export const projects: readonly ProjectItem[] = [
       nodes: ['Route', 'Convoy', 'Nearby', 'Profile'],
     },
   },
+  {
+    title: 'Arabic Café Point-of-Sale System',
+    summary:
+      'A point-of-sale app for a café in Libya, with an Arabic interface and Libyan-dinar transactions.',
+    bullets: [
+      'Developed order entry, product management and transaction workflows in React and Tailwind.',
+      'Designed right-to-left screens and receipt layouts for an 80 mm thermal printer.',
+      'Worked on desktop packaging and local storage with Electron and SQLite.',
+    ],
+    technologies: [
+      'React',
+      'Tailwind CSS',
+      'Electron',
+      'SQLite',
+      'Arabic RTL Design',
+    ],
+    visual: {
+      type: 'system',
+      label: 'نظام نقطة البيع',
+      nodes: ['الطلبات', 'المنتجات', 'الدفع', 'الإيصال'],
+    },
+  },
+  {
+    title: 'CoinWa Financial Literacy App',
+    summary:
+      'The financial-literacy app I worked on during my CoinWa internship.',
+    bullets: [
+      'Created Flutter screens for lessons and learning progress.',
+      'Connected accounts and progress tracking to Node.js and MongoDB, including email verification and password recovery.',
+    ],
+    technologies: ['Flutter', 'Dart', 'Node.js', 'MongoDB'],
+    visual: {
+      type: 'images',
+      images: [
+        {
+          src: '/assets/cw1.png',
+          alt: 'CoinWa mobile app onboarding screen',
+        },
+        {
+          src: '/assets/cw2.png',
+          alt: 'CoinWa financial-literacy lesson screen',
+        },
+        {
+          src: '/assets/cw3.png',
+          alt: 'CoinWa mobile app progress screen',
+        },
+      ],
+    },
+  },
+  {
+    title: 'Teacher-Course Assignment Optimizer',
+    summary:
+      'A Java application I developed at Western University to automate instructor-course assignments.',
+    bullets: [
+      'Applied instructor qualifications and availability as constraints to replace repetitive manual assignments.',
+      'Refined the tool with departmental staff and trained them to use it.',
+    ],
+    technologies: ['Java', 'Algorithms', 'Data Structures', 'Process Automation'],
+    visual: {
+      type: 'images',
+      images: [
+        {
+          src: '/assets/western.jpeg',
+          alt: 'Western University crest',
+        },
+      ],
+    },
+  },
 ];
 
 export const profile = {

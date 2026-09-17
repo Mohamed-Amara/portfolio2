@@ -6,10 +6,10 @@ This is an editorial record, not website copy.
 
 The LaTeX résumé supplied by Mohamed on September 17, 2026 is the source of truth for the site’s visible experience, projects, technical skills and coursework. Portfolio copy can use a more natural first-person voice, but it should not add accomplishments, tools or metrics that are not supported by that résumé.
 
-The site now features:
+The résumé-aligned content features:
 
 - The Plug Co, CoinWa and Western University under experience.
-- OEM Wireless CarPlay Integration, Armada and the Human-Powered Washing Machine under projects.
+- OEM Wireless CarPlay Integration, Armada and the Human-Powered Washing Machine as the first three projects. The portfolio also retains the Arabic café POS, CoinWa app and teacher-course optimizer as additional project evidence.
 - The résumé’s three skill groups: Languages, Embedded & Robotics, and Software & Tools.
 - The six relevant courses listed in the résumé.
 
