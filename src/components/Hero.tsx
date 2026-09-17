@@ -1,91 +1,47 @@
-import { ArrowDownRight, ArrowRight, CheckCircle2 } from 'lucide-react';
-
-const roleTags = [
-  'AI/Hardware Systems',
-  'Embedded Development',
-  'Software',
-  'Technical Sales',
-] as const;
+import { ArrowDownRight, ArrowRight, FileText, Mail } from 'lucide-react';
+import { contact, profile } from '../data/portfolio';
 
 const Hero = () => (
-  <section id="top" className="technical-grid relative isolate scroll-mt-24 overflow-hidden bg-slate-50">
+  <section id="top" className="technical-grid relative isolate scroll-mt-24 bg-slate-50">
     <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b from-blue-100/60 to-transparent" />
-    <div className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-10 lg:py-28">
+    <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:px-10">
       <div>
-        <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-blue-700 sm:text-sm">
-          <span className="h-px w-8 bg-blue-600" aria-hidden="true" />
-          University of Waterloo • Mechatronics Engineering
-        </p>
-        <h1 className="max-w-4xl text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-slate-950 sm:text-6xl lg:text-7xl">
-          Building technical systems from{' '}
-          <span className="text-blue-700">hardware to software.</span>
+        <p className="section-kicker">University of Waterloo · {profile.academicStage}</p>
+        <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-slate-950 sm:text-6xl">
+          I’m Mohamed.<br />I work across <span className="text-blue-700">hardware and software.</span>
         </h1>
-        <p className="mt-7 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-          Mechatronics Engineering student with experience in AI/hardware systems,
-          embedded development, software and customer-facing sales. Seeking Fall 2026
-          engineering or technical sales opportunities.
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          I’m a Mechatronics Engineering student interested in embedded systems and how devices work.
+          My experience includes AI and device integration at The Plug, mobile development at CoinWa,
+          and a Java tool that automated course assignments.
         </p>
-
-        <ul className="mt-7 flex flex-wrap gap-2" aria-label="Areas of focus">
-          {roleTags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm"
-            >
-              {tag}
-            </li>
-          ))}
+        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Roles of interest">
+          {profile.focus.map((item) => <li key={item} className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700">{item}</li>)}
         </ul>
-
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a href="#experience" className="button-primary">
-            View Experience
-            <ArrowDownRight aria-hidden="true" size={17} />
-          </a>
-          <a href="#projects" className="button-secondary">
-            View Projects
-            <ArrowRight aria-hidden="true" size={17} />
-          </a>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="#experience" className="button-primary">View my experience <ArrowDownRight aria-hidden="true" size={17} /></a>
+          <a href="#projects" className="button-secondary">See my projects <ArrowRight aria-hidden="true" size={17} /></a>
+          <a href={contact.resumeHref} target="_blank" rel="noreferrer" className="button-secondary">View résumé <FileText aria-hidden="true" size={17} /></a>
         </div>
+        <p className="mt-5 text-sm text-slate-600">{profile.availability} · Waterloo, Ontario</p>
       </div>
-
-      <aside className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end" aria-label="Career focus">
-        <div className="absolute -inset-3 -z-10 rotate-2 rounded-2xl border border-blue-200 bg-blue-100/60" />
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_22px_70px_-38px_rgba(15,23,42,0.45)] sm:p-8">
-          <div className="flex items-center gap-2 border-b border-slate-200 pb-5 text-sm font-semibold text-emerald-700">
-            <CheckCircle2 aria-hidden="true" size={18} />
-            Seeking Fall 2026 opportunities
-          </div>
-
-          <div className="divide-y divide-slate-200">
-            <div className="grid grid-cols-[42px_1fr] gap-4 py-6">
-              <span className="font-mono text-xs text-blue-700">01</span>
-              <div>
-                <p className="font-semibold text-slate-950">Engineering path</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Embedded systems, robotics, hardware, software, automation and mechatronics.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-[42px_1fr] gap-4 py-6">
-              <span className="font-mono text-xs text-blue-700">02</span>
-              <div>
-                <p className="font-semibold text-slate-950">Commercial path</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Technical sales, applications engineering, solutions and business development.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between rounded-lg bg-slate-950 px-4 py-3 text-xs text-slate-300">
-            <span>BUILD</span>
-            <span className="text-blue-400">→</span>
-            <span>UNDERSTAND</span>
-            <span className="text-blue-400">→</span>
-            <span>COMMUNICATE</span>
-          </div>
+      <aside className="rounded-xl border border-slate-200 bg-white p-6 sm:p-7" aria-label="Selected work at a glance">
+        <p className="section-kicker">A quick look at my work</p>
+        <div className="mt-4 divide-y divide-slate-200">
+          <a href="#the-plug" className="block rounded-sm py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+            <p className="flex items-center justify-between gap-3 font-semibold text-slate-950">AI & device integration <ArrowRight aria-hidden="true" size={16} className="text-blue-700" /></p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Team development of Memory Box, from hardware feasibility to AI and device data.</p>
+          </a>
+          <a href="#washing-machine" className="block rounded-sm py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+            <p className="flex items-center justify-between gap-3 font-semibold text-slate-950">Mechanical design <ArrowRight aria-hidden="true" size={16} className="text-blue-700" /></p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">SolidWorks assembly and drivetrain calculations for a pedal-powered washing machine.</p>
+          </a>
+          <a href="#automotive-infotainment" className="block rounded-sm py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+            <p className="flex items-center justify-between gap-3 font-semibold text-slate-950">Current project: Acura CarPlay <ArrowRight aria-hidden="true" size={16} className="text-blue-700" /></p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Researching how to add CarPlay while keeping the factory screens and controls.</p>
+          </a>
         </div>
+        <a href={contact.emailHref} className="mt-2 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"><Mail aria-hidden="true" size={16} />Get in touch</a>
       </aside>
     </div>
   </section>

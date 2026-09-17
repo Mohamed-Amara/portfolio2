@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Local PDF visual checks
+tmp/pdfs/
+
+# Generated résumé artifacts
+output/

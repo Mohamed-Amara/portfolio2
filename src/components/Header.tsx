@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Menu, X } from 'lucide-react';
+import { FileText, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { contact, navigation } from '../data/portfolio';
 
@@ -45,6 +45,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-1 border-l border-slate-200 pl-4">
+            <a href={contact.resumeHref} target="_blank" rel="noreferrer" aria-label="View Mohamed’s résumé PDF" className="icon-link"><FileText aria-hidden="true" size={18} /></a>
             <a
               href={contact.linkedin}
               target="_blank"
@@ -93,6 +94,7 @@ const Header = () => {
               ))}
             </ul>
             <div className="mt-4 flex items-center gap-2 border-t border-slate-200 pt-4">
+              <a href={contact.resumeHref} target="_blank" rel="noreferrer" className="button-secondary"><FileText aria-hidden="true" size={16} />Résumé</a>
               <a
                 href={contact.linkedin}
                 target="_blank"

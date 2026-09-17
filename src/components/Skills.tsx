@@ -5,20 +5,20 @@ const icons = [Cpu, Monitor, Wrench, MessagesSquare] as const;
 
 const Skills = () => (
   <section id="skills" className="scroll-mt-24 border-y border-slate-200 bg-white">
-    <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-24 lg:px-10">
+    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 md:py-16 lg:px-10">
       <div className="grid gap-6 md:grid-cols-[180px_1fr]">
         <p className="section-kicker">04 / Skills</p>
         <div>
           <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Technical depth with customer-facing range.
+            Skills & tools
           </h2>
           <p className="mt-4 max-w-2xl leading-7 text-slate-600">
-            Tools and capabilities grouped by how they contribute to a product or system.
+            My technical background, with examples in the work and projects above.
           </p>
         </div>
       </div>
 
-      <div className="mt-14 grid border-l border-t border-slate-200 sm:grid-cols-2">
+      <div className="mt-8 grid border-l border-t border-slate-200 sm:grid-cols-2">
         {skillGroups.map((group, index) => {
           const Icon = icons[index];
 

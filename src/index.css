@@ -68,3 +68,12 @@
     linear-gradient(90deg, rgba(148, 163, 184, 0.13) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+
+.engineering-brief > summary::-webkit-details-marker,
+.technical-note > summary::-webkit-details-marker {
+  display: none;
+}
+
+.technical-note[open] > summary .note-chevron {
+  transform: rotate(180deg);
+}

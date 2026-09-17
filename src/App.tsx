@@ -10,8 +10,9 @@ import Skills from './components/Skills';
 
 const App = () => (
   <div className="min-h-screen overflow-x-clip bg-slate-50 text-slate-900">
+    <a href="#main-content" className="sr-only fixed left-4 top-3 z-[60] rounded-md bg-white px-4 py-3 font-semibold text-blue-700 focus:not-sr-only">Skip to content</a>
     <Header />
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <Hero />
       <About />
       <Experience />

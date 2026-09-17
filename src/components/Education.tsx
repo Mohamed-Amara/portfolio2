@@ -1,17 +1,17 @@
 import { GraduationCap } from 'lucide-react';
-import { education } from '../data/portfolio';
+import { education, profile } from '../data/portfolio';
 
 const Education = () => (
   <section id="education" className="scroll-mt-24 bg-slate-50">
-    <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-24 lg:px-10">
+    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 md:py-16 lg:px-10">
       <div className="grid gap-6 md:grid-cols-[180px_1fr]">
         <p className="section-kicker">05 / Education</p>
         <div>
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Engineering foundation.
+            Education
           </h2>
 
-          <article className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <article className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-10">
               <div>
                 <span className="grid size-12 place-items-center rounded-xl bg-blue-700 text-white">
@@ -20,6 +20,7 @@ const Education = () => (
                 <h3 className="mt-6 text-2xl font-semibold text-slate-950">
                   {education.institution}
                 </h3>
+                <p className="mt-2 text-sm font-semibold text-blue-700">Currently in {profile.academicStage}</p>
                 <p className="mt-3 max-w-xl leading-7 text-slate-600">
                   {education.degree}
                 </p>
